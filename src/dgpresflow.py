@@ -1,7 +1,7 @@
 # Digital preservation workflow
 
 import click
-import digipreslib as dglib
+import dgplib as dglib
 import pprint
 import configparser
 
