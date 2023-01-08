@@ -12,16 +12,12 @@ Creating [class diagrams](https://mermaid.js.org/syntax/classDiagram.html)
 ## Accession
 
 ```mermaid
----
-title: Accession Class
----
-
-classDiagram
-    class Accession
-    Accession: +String acc_id
-    Accession: +Bagger bag
-    Accession: +queryAPI(userName)
-    Accession: +createBag(bag)
+classDiagram;
+    class Accession;
+    Accession: +String acc_id;
+    Accession: +Bagger bag;
+    Accession: +queryAPI(userName);
+    Accession: +createBag(bag);
 ```
 
 ## Bagger
