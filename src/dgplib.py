@@ -16,7 +16,7 @@ class ScanAV(BaseModel):
     av_run: bool
 
 
-class BagIt(BaseModel):
+class Bagger(BaseModel):
     """Set the folders that will be bagged, and the destination folder for the
     bag
     """
@@ -41,7 +41,7 @@ class AccessionFlow(BaseModel):
 
     accession_id: str
     av_scan: ScanAV
-    bag_it: BagIt
+    bag_it: Bagger
 
 
 def read_av_config(config) -> ScanAV:
@@ -61,10 +61,10 @@ def read_av_config(config) -> ScanAV:
     return scan_av
 
 
-def read_bag_config(config) -> BagIt:
+def read_bag_config(config) -> Bagger:
     """Read the folders to bag, and the destination of the bag"""
 
-    bag_it = BagIt(input_line=config.get("source_dir"), bag_dir=config.get("dest_dir"))
+    bag_it = Bagger(input_line=config.get("source_dir"), bag_dir=config.get("dest_dir"))
 
     return bag_it
 
