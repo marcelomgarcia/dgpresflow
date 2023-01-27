@@ -1,4 +1,8 @@
-# Class Diagrams
+# Diagrams
+
+Diagrams to help understand the project
+
+## Class Diagrams
 
 Creating [class diagrams](https://mermaid.js.org/syntax/classDiagram.html)
 
@@ -9,7 +13,7 @@ Creating [class diagrams](https://mermaid.js.org/syntax/classDiagram.html)
   - Jove (and modules)
   - DROID
 
-## Accession
+### Accession
 
 ```mermaid
 classDiagram
@@ -26,7 +30,7 @@ classDiagram
 
 ```
 
-## Bagger
+### Bagger
 
 ```mermaid
 classDiagram
@@ -37,7 +41,7 @@ classDiagram
   Bagger: -CreateBag(bag)
 ```
 
-## ScanAV
+### ScanAV
 
 ```mermaid
 classDiagram
@@ -52,4 +56,29 @@ classDiagram
   ScanAV: -UpdateDBAV()
   ScanAV: -ScanAV(pathFiles)
   ScanAV: -InQuarantine()
+```
+
+### Format Identifiers
+
+There are two format identifiers in use: [JHOVE](http://jhove.openpreservation.org/) and [DROID](https://www.nationalarchives.gov.uk/information-management/manage-information/preserving-digital-records/droid/). We start with a base class for the format identifiers, then we expand the base class for each identifier.
+
+```mermaid
+classDiagram
+  class formatIdentifier
+  formatIdentifier: +str pathRootDir
+  formatIdentifier: +str fileExe
+  formatIdentifier: +str outputFormat
+  formatIdentifier: +bool hasModules
+```
+
+---
+
+## Entity Relationship
+
+The big picture
+
+```mermaid
+erDiagram
+    Accession ||--|| ScanAV : scan
+    Accession ||--|| Bag: has
 ```
