@@ -17,6 +17,17 @@ Diagrams to help understand the project
    1. DROID
    1. JHOVE (depending on the modules enabled.)
 
+```mermaid
+erDiagram
+    Accession ||--|| ScanAV : scan
+    Accession ||--|| Bag: has
+    ScanAV ||--|| Quarantine: Wait
+    Quarantine ||--|| Bag: continue
+    Accession ||--|{ Format_ID: Identifies
+    Format_ID ||--|| DROID: run
+    Format_ID ||--|| JHOVE: run
+```
+
 ## Class Diagrams
 
 - A _composition_ is an existential relationship: we can't have `TrainingData` without the two `List[Sample]` objects. And, conversely, a `List[Sample]` objject isn't used in our application without being part of a `TrainingData` object. In UML, this is a filled diamond.
