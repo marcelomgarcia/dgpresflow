@@ -45,8 +45,6 @@ classDiagram
     Accession : +QueryAPI(userName)
     Accession : +CreateBag(bag)
     Accession : +ScanAV(files)
-
-
 ```
 
 ### Bagger
